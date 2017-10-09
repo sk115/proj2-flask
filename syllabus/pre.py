@@ -9,7 +9,7 @@ logging.basicConfig(format='%(levelname)s:%(message)s',
 log = logging.getLogger(__name__)
 
 base = arrow.now()   # Default, replaced if file has 'begin: ...'
-
+now = arrow.now()
 
 def process(raw):
     """
@@ -51,7 +51,10 @@ def process(raw):
                 entry = {}
             entry['topic'] = ""
             entry['project'] = ""
-            entry['week'] = content
+            start = base.shift(weeks=+(int(content)-1))
+            entry['week'] = 'Week {}: {}'.format(content, start.format("MM/DD/YYYY"))
+            if (start <= now < start.shift(weeks=+1)):
+                entry['isweek'] = True
 
         elif field == 'topic' or field == 'project':
             entry[field] = content

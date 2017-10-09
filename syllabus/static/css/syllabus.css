@@ -12,10 +12,13 @@ body {
 	margin: 0;
 }
 
+#current {
+    background-color: #41fff6
+}
 
-table .class-schedule: {
+table .class-schedule {
     background-color: rgb(240,224,178);
-    color: rgb(0,102,0);
+    color: #41f7fd;
     margin: 5px;
     padding: 3px;
 }

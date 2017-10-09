@@ -18,13 +18,11 @@
   {% else %}
   <tr class="odd">
   {% endif %}	   
-    <td class="week">{{ entry.week }}</td>
+    <td class="week" {% if entry.isweek %}id='current'{% endif %}>{{ entry.week }}</td>
     <td class="topic">{{ entry.topic }}</td>
     <td class="project">{{ entry.project}}</td>
   </tr>
   {% endfor %}
   
-
-
 
 </body> </html>
