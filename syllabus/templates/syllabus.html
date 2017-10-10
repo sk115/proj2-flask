@@ -18,6 +18,7 @@
   {% else %}
   <tr class="odd">
   {% endif %}	   
+    <!-- Add an expresstion to add the '#current' CSS rule if the isweek flag is present -->
     <td class="week" {% if entry.isweek %}id='current'{% endif %}>{{ entry.week }}</td>
     <td class="topic">{{ entry.topic }}</td>
     <td class="project">{{ entry.project}}</td>
